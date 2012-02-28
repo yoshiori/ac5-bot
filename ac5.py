@@ -66,7 +66,7 @@ class ACVthread(threading.Thread):
                 msg = status['text']
                 print msg, type(msg)
                 self._bot.connection.notice(self._bot.channel, msg.encode('utf-8'))
-            self._bot.connection.privmsg(self._bot.channel, 'twitter から切断されました。再接続します'.encode('utf-8'))
+            self._bot.connection.privmsg(self._bot.channel, u'twitter から切断されました。再接続します'.encode('utf-8'))
             print 'end stream'
             sleep(60)
 
