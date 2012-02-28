@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import simplejson,urllib,urllib2
+import json,urllib,urllib2
 from pit import Pit
 
 class TwitterStream(object):
@@ -25,7 +25,7 @@ class TwitterStream(object):
         res = opener.open(url, urllib.urlencode(params))
         for line in res:
             if line.strip():
-                yield simplejson.loads(line)
+                yield json.loads(line)
         
         
     def getOpener(self,url):
